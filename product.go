@@ -73,7 +73,7 @@ type Product struct {
 	Status                         ProductStatus   `json:"status,omitempty"`
 	Options                        []ProductOption `json:"options,omitempty"`
 	Variants                       []Variant       `json:"variants,omitempty"`
-	VariantGids                    []Variant       `json:"variant_gids,omitempty"`
+	VariantGids                    []VariantGid    `json:"variant_gids,omitempty"`
 	Image                          Image           `json:"image,omitempty"`
 	Images                         []Image         `json:"images,omitempty"`
 	TemplateSuffix                 string          `json:"template_suffix,omitempty"`
@@ -81,6 +81,11 @@ type Product struct {
 	MetafieldsGlobalDescriptionTag string          `json:"metafields_global_description_tag,omitempty"`
 	Metafields                     []Metafield     `json:"metafields,omitempty"`
 	AdminGraphqlApiId              string          `json:"admin_graphql_api_id,omitempty"`
+}
+
+type VariantGid struct {
+	AdminGraphqlApiId string     `json:"admin_graphql_api_id,omitempty"`
+	UpdatedAt         *time.Time `json:"updated_at"`
 }
 
 // The options provided by Shopify
