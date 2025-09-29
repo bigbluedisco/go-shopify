@@ -73,6 +73,7 @@ type Product struct {
 	Status                         ProductStatus   `json:"status,omitempty"`
 	Options                        []ProductOption `json:"options,omitempty"`
 	Variants                       []Variant       `json:"variants,omitempty"`
+	VariantGids                    []Variant       `json:"variant_gids,omitempty"`
 	Image                          Image           `json:"image,omitempty"`
 	Images                         []Image         `json:"images,omitempty"`
 	TemplateSuffix                 string          `json:"template_suffix,omitempty"`
@@ -136,7 +137,6 @@ func (s *ProductServiceOp) ListAll(ctx context.Context, options interface{}) ([]
 
 	for {
 		entities, pagination, err := s.ListWithPagination(ctx, options)
-
 		if err != nil {
 			return collector, err
 		}
