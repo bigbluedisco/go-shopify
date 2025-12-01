@@ -78,6 +78,7 @@ type Variant struct {
 	AdminGraphqlApiId    string                 `json:"admin_graphql_api_id,omitempty"`
 	Metafields           []Metafield            `json:"metafields,omitempty"`
 	PresentmentPrices    []presentmentPrices    `json:"presentment_prices,omitempty"`
+	RequiresComponents   bool                   `json:"requires_components,omitempty"`
 }
 
 type presentmentPrices struct {
